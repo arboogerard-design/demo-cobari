@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cobari Solutions · Electricidad, agua, gas y reformas en Cataluña</title>
+<meta name="description" content="Electricidad, agua, gas, aire acondicionado, baños, cocinas, alicatados, reformas integrales y jardines en Cataluña. Urgencias 24 h.">
+<meta name="theme-color" content="#141311">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23141311'/%3E%3Cpath d='M18 4 8 18h7l-2 10 11-15h-7z' fill='%23ffb000'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero_m.webp" media="(max-width: 760px)">
+<link rel="preload" as="image" href="img/hero.webp" media="(min-width: 761px)">
+<script>(function(){var h=document.documentElement;h.classList.add('js');if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)h.classList.add('rm')})();</script>
+<style>
+:root{
+ --paper:#f1eee8; --paper2:#e8e3da; --ink:#141311; --ink2:#2b2925; --stone:#6f695f; --line:rgba(20,19,17,.13);
+ --amber:#ffb000; --amber2:#e09a00; --night:#121110;
+ --hd:"Bricolage Grotesque",Georgia,serif; --bd:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+ --r:10px; --ease:cubic-bezier(.22,1,.36,1); --wrap:1280px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:120px}
+html.rm{scroll-behavior:auto}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--bd);overflow-x:clip}
+a{color:inherit}
+img,video{display:block;max-width:100%}
+.wrap{width:min(100% - 32px,var(--wrap));margin-inline:auto}
+h1,h2,h3{font-family:var(--hd);font-weight:800;letter-spacing:-.025em;line-height:.95;margin:0}
+h1{font-size:clamp(44px,7.2vw,112px)}
+h2{font-size:clamp(36px,5vw,76px)}
+h3{font-size:clamp(28px,3vw,44px);line-height:1}
+p{margin:0}
+.eyebrow{font:600 13px/1 var(--bd);letter-spacing:.14em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:6px;border:1px solid transparent;cursor:pointer;
+ font:600 16px/1 var(--bd);text-decoration:none;transition:transform .25s var(--ease),background-color .25s var(--ease),color .25s var(--ease)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn.ink{background:var(--ink);color:var(--paper)}
+.btn.ink:hover{background:#000;transform:translateY(-2px)}
+.btn.amb{background:var(--amber);color:var(--ink)}
+.btn.amb:hover{background:#ffc233;transform:translateY(-2px)}
+.btn.line{border-color:currentColor;background:transparent}
+.btn.line:hover{transform:translateY(-2px)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+
+/* franja de demo */
+.demo{position:relative;z-index:60;background:var(--ink);color:#d9d3c8;font:500 13px/1.3 var(--bd);text-align:center;padding:7px 12px}
+.demo b{color:var(--amber);font-weight:600}
+
+/* barra */
+.bar{position:sticky;top:0;z-index:50;background:rgba(241,238,232,.9);-webkit-backdrop-filter:blur(10px) saturate(1.2);backdrop-filter:blur(10px) saturate(1.2);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
+.logo{display:flex;align-items:baseline;gap:6px;text-decoration:none}
+.logo b{font:800 24px/1 var(--hd);letter-spacing:-.02em}
+.logo span{font:500 14px/1 var(--bd);color:var(--stone)}
+.bar nav{display:flex;align-items:center;gap:10px}
+.live{display:inline-flex;align-items:center;gap:8px;font:600 14px/1 var(--bd)}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 0 rgba(255,176,0,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(255,176,0,0)}100%{box-shadow:0 0 0 0 rgba(255,176,0,0)}}
+.rm .dot{animation:none}
+.bar .btn{min-height:44px;padding:0 16px;font-size:15px}
+@media (max-width:760px){.bar .live,.bar .call-t{display:none}.bar .btn{padding:0 12px}.bar{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--paper)}
+ .hero video{display:none}
+ html:not(.rm) .hero img{animation:kb 18s cubic-bezier(.45,0,.55,1) infinite alternate;will-change:transform}}
+@media (max-width:760px){.hero:after{background:linear-gradient(180deg,rgba(18,17,16,.35) 0%,rgba(18,17,16,.55) 35%,rgba(18,17,16,.9) 70%,rgba(18,17,16,.96) 100%)}.hero .lead{color:#efe9df}}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.13) translate(-1.5%,-1%)}}
+
+/* portada */
+.hero{position:relative;min-height:calc(100svh - 96px);display:grid;align-items:end;color:#f4f0e8;overflow:hidden;background:var(--night)}
+.hero picture,.hero video{position:absolute;inset:0;width:100%;height:100%}
+.hero img,.hero video{width:100%;height:100%;object-fit:cover}
+.hero video{opacity:0;transition:opacity 1s var(--ease)}
+.hero video.on{opacity:1}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,17,16,.15) 0%,rgba(18,17,16,.2) 40%,rgba(18,17,16,.86) 100%),linear-gradient(90deg,rgba(18,17,16,.55),rgba(18,17,16,0) 60%)}
+.hero .wrap{position:relative;z-index:2;padding:min(14vh,140px) 0 clamp(28px,5vh,56px)}
+.hero .eyebrow{color:var(--amber);margin-bottom:18px}
+.hero h1{max-width:13ch}
+.hero .lead{max-width:52ch;margin-top:20px;font-size:clamp(17px,1.4vw,20px);color:#e3ddd2}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero .btn.line{color:#f4f0e8}
+.nums{position:relative;z-index:2;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid rgba(244,240,232,.2);margin-top:clamp(28px,6vh,64px)}
+.nums div{padding:18px 16px 0 0}
+.nums b{display:block;font:800 clamp(30px,3.2vw,46px)/1 var(--hd);letter-spacing:-.02em}
+.nums span{display:block;margin-top:6px;font-size:14px;color:#cfc8bc}
+@media (max-width:900px){.nums{grid-template-columns:repeat(2,1fr)}.nums div:last-child{grid-column:span 2}}
+
+/* oficios */
+.sec{padding:clamp(72px,10vw,140px) 0}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:24px 48px;align-items:end;margin-bottom:clamp(40px,6vw,72px)}
+.intro p{color:var(--ink2);max-width:48ch;font-size:18px}
+.oficios{display:grid;grid-template-columns:280px 1fr;gap:clamp(24px,4vw,64px);align-items:start}
+.indice{position:sticky;top:96px;display:grid;gap:2px;margin:0;padding:0;list-style:none}
+.indice a{display:grid;grid-template-columns:34px 1fr;align-items:baseline;padding:9px 0;text-decoration:none;color:var(--stone);font:600 17px/1.2 var(--bd);border-bottom:1px solid var(--line);transition:color .3s var(--ease)}
+.indice a i{font:600 12px/1 var(--bd);font-style:normal;letter-spacing:.08em}
+.indice a.on{color:var(--ink)}
+.indice a.on i{color:var(--amber2)}
+.of{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(20px,3vw,44px);padding:0 0 clamp(64px,8vw,110px);align-items:start}
+.of:nth-of-type(even){grid-template-columns:1fr 1.15fr}
+.of:nth-of-type(even) .of-m{order:2}
+.of-m{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--paper2)}
+.of-m img,.of-m video{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.4s var(--ease)}
+.of.vis .of-m img,.of.vis .of-m video{transform:scale(1)}
+.of-m .n{position:absolute;left:14px;top:12px;z-index:2;font:800 64px/1 var(--hd);color:#f4f0e8;letter-spacing:-.04em;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.of-t{padding-top:clamp(0px,2vw,24px)}
+.of-t h3{margin-bottom:16px}
+.of-t p{color:var(--ink2)}
+.of-t ul{margin:20px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.of-t li{padding:7px 12px;border:1px solid var(--line);border-radius:999px;font-size:15px}
+.caso{margin-top:24px;padding:18px 0 0;border-top:2px solid var(--ink)}
+.caso small{display:block;font:600 12px/1 var(--bd);letter-spacing:.12em;text-transform:uppercase;color:var(--stone);margin-bottom:8px}
+.caso q{display:block;font:600 19px/1.35 var(--bd);quotes:"«" "»"}
+.of-t .btn{margin-top:24px}
+@media (max-width:1000px){.oficios{grid-template-columns:1fr}.indice{position:sticky;top:64px;z-index:20;display:flex;gap:6px;overflow-x:auto;padding:10px 0;margin:0 -16px;padding-inline:16px;background:rgba(241,238,232,.94);scrollbar-width:none}
+ .indice a{flex:none;display:block;padding:8px 12px;border:1px solid var(--line);border-radius:999px;font-size:14px}.indice a i{display:none}.indice a.on{background:var(--ink);color:var(--paper)}
+ .of,.of:nth-of-type(even){grid-template-columns:1fr}.of:nth-of-type(even) .of-m{order:0}.of-m{aspect-ratio:4/3}.intro{grid-template-columns:1fr}}
+
+/* antes / después */
+.ad{position:absolute;inset:0;--x:52%;touch-action:pan-y}
+.ad img{position:absolute;inset:0}
+.ad .antes{clip-path:inset(0 calc(100% - var(--x)) 0 0)}
+.ad .ln{position:absolute;top:0;bottom:0;left:var(--x);width:2px;margin-left:-1px;background:#f4f0e8}
+.ad .kn{position:absolute;top:50%;left:var(--x);width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;background:var(--amber);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.ad .kn svg{width:24px;height:24px}
+.ad input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ad .tg{position:absolute;bottom:14px;z-index:2;padding:6px 10px;border-radius:4px;background:rgba(18,17,16,.78);color:#f4f0e8;font:600 12px/1 var(--bd);letter-spacing:.1em;text-transform:uppercase}
+.ad .tg.a{left:14px}.ad .tg.d{right:14px}
+
+/* cómo trabajamos */
+.dark{background:var(--night);color:#f1ece3}
+.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:0;padding:0;list-style:none;counter-reset:p;position:relative}
+.pasos:before{content:"";position:absolute;left:0;right:0;top:27px;height:2px;background:rgba(241,236,227,.15)}
+.pasos:after{content:"";position:absolute;left:0;top:27px;height:2px;width:calc(var(--prog,0) * 100%);background:var(--amber);transition:width .2s linear}
+.pasos li{position:relative;padding:0 28px 0 0}
+.pasos li:before{counter-increment:p;content:counter(p);display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--night);border:2px solid var(--amber);color:var(--amber);font:800 22px/1 var(--hd);margin-bottom:22px;position:relative;z-index:1}
+.pasos h3{font-size:clamp(24px,2.2vw,32px);margin-bottom:10px}
+.pasos p{color:#c9c2b6}
+@media (max-width:860px){.pasos{grid-template-columns:1fr;gap:28px}.pasos:before,.pasos:after{display:none}}
+
+/* reseñas */
+.res{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:clamp(16px,2vw,28px)}
+.re{padding:28px;border-radius:var(--r);background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.re:first-child{background:var(--ink);color:var(--paper)}
+.re:first-child blockquote{font-size:clamp(24px,2.2vw,32px)}
+.re blockquote{margin:0;font:600 20px/1.3 var(--hd);letter-spacing:-.01em}
+.re .st{display:flex;gap:3px;color:var(--amber)}
+.re .st svg{width:18px;height:18px}
+.re footer{font-size:15px;color:var(--stone)}
+.re:first-child footer{color:#bdb6aa}
+@media (max-width:900px){.res{grid-template-columns:1fr}}
+
+/* quiénes */
+.quien{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:center}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.socio{padding:26px;border-radius:var(--r);background:var(--paper2)}
+.socio .ini{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--ink);color:var(--amber);font:800 28px/1 var(--hd);margin-bottom:18px}
+.socio h3{font-size:30px;margin-bottom:6px}
+.socio p{color:var(--ink2);font-size:16px}
+.socio a{display:inline-block;margin-top:12px;font-weight:600}
+@media (max-width:860px){.quien{grid-template-columns:1fr}}
+@media (max-width:420px){.duo{grid-template-columns:1fr}}
+
+/* formulario */
+.form-sec{background:var(--paper2)}
+.fgrid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(24px,5vw,80px);align-items:start}
+form.pide{display:grid;gap:18px}
+.campo label,.campo legend{display:block;font:600 14px/1 var(--bd);margin-bottom:8px}
+.campo input,.campo select,.campo textarea{width:100%;min-height:52px;padding:12px 14px;border-radius:6px;border:1px solid rgba(20,19,17,.25);background:#fff;color:var(--ink);font:400 16px var(--bd)}
+.campo textarea{min-height:110px;resize:vertical}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+fieldset{border:0;margin:0;padding:0}
+.seg{position:relative;display:flex;flex-wrap:wrap;gap:8px}
+.seg input{position:absolute;left:0;top:0;width:1px;height:1px;min-height:0;padding:0;margin:0;opacity:0;pointer-events:none}
+.seg label{margin:0;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(20,19,17,.25);background:#fff;font:500 15px/1 var(--bd);cursor:pointer}
+.seg input:checked+label{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.seg input:focus-visible+label{outline:3px solid var(--amber);outline-offset:2px}
+.ok{display:none;padding:24px;border-radius:var(--r);background:var(--ink);color:var(--paper)}
+.ok.show{display:block}
+.ok p{margin:8px 0 16px;color:#d9d3c8}
+.err{color:#9c2a00;font-size:14px;min-height:20px}
+@media (max-width:860px){.fgrid,.dos{grid-template-columns:1fr}}
+
+footer.pie{padding:40px 0 110px;background:var(--night);color:#c9c2b6;font-size:15px}
+footer.pie .wrap{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px}
+footer.pie b{display:block;color:#f1ece3;font:800 22px/1 var(--hd);margin-bottom:8px}
+footer.pie a{display:block;text-decoration:none;padding:3px 0}
+@media (max-width:760px){footer.pie .wrap{grid-template-columns:1fr}}
+
+/* barra fija móvil */
+.fija{position:fixed;left:0;right:0;bottom:0;z-index:55;display:none;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(18,17,16,.94)}
+.fija .btn{min-height:52px}
+@media (max-width:760px){.fija{display:grid}}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.vis{opacity:1;transform:none}
+.rm .reveal{opacity:1;transform:none;transition:none}
+.rm .of-m img,.rm .of-m video{transform:none;transition:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="demo">Demo privada para Cobari Solutions · <b>casos, cifras y reseñas de ejemplo</b> hasta tener los reales</div>
+<header class="bar">
+ <div class="wrap">
+  <a class="logo" href="#top" aria-label="Cobari Solutions, inicio"><b>COBARI</b><span>Solutions</span></a>
+  <nav aria-label="Contacto rápido">
+   <span class="live"><i class="dot" aria-hidden="true"></i>Urgencias 24 h</span>
+   <a class="btn line" href="tel:+34663419911"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="call-t">663 419 911</span></a>
+   <a class="btn ink" data-wa="Hola Cobari, os escribo desde la web." href="https://wa.me/34663419911" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.6.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3z"/></svg>WhatsApp</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+ <section class="hero" id="top" aria-labelledby="t-hero">
+  <picture><source media="(max-width: 760px)" srcset="img/hero_m.webp"><img src="img/hero.webp" alt="Electricista trabajando en una instalación" width="1600" height="1067" fetchpriority="high"></picture>
+  <video muted loop playsinline preload="none" data-src-d="media/hero.mp4" data-src-m="media/hero_m.mp4" aria-hidden="true"></video>
+  <div class="wrap">
+   <p class="eyebrow">Cataluña · 24 h · 10 años de oficio</p>
+   <h1 id="t-hero">La avería, la reforma y la obra. Un solo equipo.</h1>
+   <p class="lead">Electricidad, agua, gas, aire acondicionado, baños, cocinas, alicatados, reformas integrales y jardines. Lo resolvemos de principio a fin.</p>
+   <div class="cta"><a class="btn amb" href="tel:+34663419911">Urgencia: llamar ahora</a><a class="btn line" data-wa="Hola Cobari, quiero pedir un presupuesto." href="https://wa.me/34663419911" target="_blank" rel="noopener">Presupuesto por WhatsApp</a></div>
+   <div class="nums" aria-label="Cobari en cifras">
+    <div><b data-n="10">10</b><span>años de oficio</span></div>
+    <div><b>24 h</b><span>también festivos</span></div>
+    <div><b data-n="9">9</b><span>oficios en un solo equipo</span></div>
+    <div><b data-n="1240">1240</b><span>trabajos cerrados</span></div>
+    <div><b data-n="38" data-suf=" min">38 min</b><span>de respuesta media en urgencias</span></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="sec" id="oficios" aria-labelledby="t-of">
+  <div class="wrap">
+   <div class="intro reveal"><h2 id="t-of">Nueve oficios. Una sola llamada.</h2><p>Cada trabajo, con su foto y un caso. Pide el presupuesto del que necesites: el mensaje sale ya escrito.</p></div>
+   <div class="oficios">
+    <ol class="indice" id="indice">
+     <li><a href="#electricidad"><i>01</i>Electricidad</a></li><li><a href="#fontaneria"><i>02</i>Agua y fontanería</a></li><li><a href="#gas"><i>03</i>Gas</a></li>
+     <li><a href="#aire"><i>04</i>Aire acondicionado</a></li><li><a href="#banos"><i>05</i>Baños</a></li><li><a href="#cocinas"><i>06</i>Cocinas</a></li>
+     <li><a href="#alicatados"><i>07</i>Alicatados</a></li><li><a href="#reformas"><i>08</i>Reformas integrales</a></li><li><a href="#jardines"><i>09</i>Jardines y obras</a></li>
+    </ol>
+    <div>
+     <article class="of" id="electricidad"><div class="of-m"><span class="n">01</span><video muted loop playsinline preload="none" poster="img/electricidad_m.webp" data-src-d="media/electricidad.mp4" data-src-m="media/electricidad.mp4" aria-label="Cuadro eléctrico"></video></div>
+      <div class="of-t"><h3>Electricidad</h3><p>Averías y cortes, cuadros eléctricos, enchufes, iluminación y cargadores.</p><ul><li>Averías 24 h</li><li>Cuadros</li><li>Iluminación</li><li>Cargadores</li></ul>
+       <div class="caso"><small>Caso</small><q>Cuadro de 1987 en un piso del Eixample: cambiado en una mañana, sin dejar a la familia sin luz por la noche.</q></div>
+       <a class="btn ink" data-of="electricidad" href="https://wa.me/34663419911" target="_blank" rel="noopener">Pedir presupuesto de electricidad</a></div></article>
+     <article class="of" id="fontaneria"><div class="of-m"><span class="n">02</span><img src="img/fontaneria_m.webp" srcset="img/fontaneria_m.webp 800w, img/fontaneria.webp 1600w" sizes="(max-width:1000px) 100vw, 38vw" alt="Fontanero reparando tuberías" width="800" height="1000" loading="lazy"></div>
+      <div class="of-t"><h3>Agua y fontanería</h3><p>Fugas, atascos, cambio de tuberías, termos y calentadores.</p><ul><li>Fugas</li><li>Atascos</li><li>Tuberías</li><li>Termos</li></ul>
+       <div class="caso"><small>Caso</small><q>Fuga bajo el suelo localizada sin levantar el baño entero.</q></div>
+       <a class="btn ink" data-of="fontanería" href="https://wa.me/34663419911" target="_blank" rel="noopener">Pedir presupuesto de fontanería</a></div></article>
+     <article class="of" id="gas"><div class="of-m"><span class="n">03</span><img src="img/gas_m.webp" srcset="img/gas_m.webp 800w, img/gas.webp 1600w" sizes="(max-width:1000px) 100vw, 38vw" alt="Cocina de gas encendida" width="800" height="1000" loading="lazy"></div>
+      <div class="of-t"><h3>Gas</h3><p>Cocinas y calderas de gas: te lo gestionamos de principio a fin.</p><ul><li>Cocinas de gas</li><li>Calderas</li></ul>
+       <div class="caso"><small>Caso</small><q>Caldera nueva lista antes del invierno.</q></div>
+       <a class="btn ink" data-of="gas" href="https://wa.me/34663419911" target="_blank" rel="noopener">Pedir presupuesto de gas</a></div></article>
+     <article class="of" id="aire"><div class="of-m"><span class="n">04</span><img src="img/aire_m.webp" srcset="img/aire_m.webp 800w, img/aire.webp 1600w" sizes="(max-width:1000px) 100vw, 38vw" alt="Aire acondicionado instalado en una pared" width="800" height="1000" loading="lazy"></div>
+      <div class="of-t"><h3>Aire acondicionado</h3><p>Instalación de splits y conductos, mantenimiento y recargas.</p><ul><li>Splits</li><li>Conductos</li><li>Mantenimiento</li></ul>
+       <div class="caso"><small>Caso</small><q>Split en dormitorio y salón en un día, con su línea eléctrica propia.</q></div>
+       <a class="btn ink" data-of="aire acondicionado" href="https://wa.me/34663419911" target="_blank" rel="noopener">Pedir presupuesto de aire</a></div></article>
+     <article class="of" id="banos"><div class="of-m"><span class="n">05</span>
+       <div class="ad" data-ad><img src="img/banos_m.webp" alt="Baño reformado con plato de ducha" width="800" height="1000" loading="lazy"><img class="antes" src="img/banos_antes_m.webp" alt="Baño antiguo con bañera, antes de la reforma" width="800" height="1000" loading="lazy">
+        <span class="ln"></span><span class="kn" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="#141311" d="M9 6 3 12l6 6V6zm6 0v12l6-6-6-6z"/></svg></span><span class="tg a">Antes</span><span class="tg d">Después</span>
+        <label class="sr" for="ad1">Desliza para comparar antes y después del baño</label><input id="ad1" type="range" min="0" max="100" value="52"></div></div>
+      <div class="of-t"><h3>Baños</h3><p>Baño completo: plato de ducha, mampara, sanitarios, alicatado y luz.</p><ul><li>Bañera a ducha</li><li>Sanitarios</li><li>Mamparas</li></ul>
+       <div class="caso"><small>Caso</small><q>Bañera a plato de ducha en 4 días.</q></div>
+       <a class="btn ink" data-of="baño" href="https://wa.me/34663419911" target="_blank" rel="noopener">Pedir presupuesto de baño</a></div></article>
+     <article class="of" id="cocinas"><div class="of-m"><span class="n">06</span>
+       <div class="ad" data-ad><img src="img/cocinas_m.webp" alt="Cocina reformada" width="800" height="1000" loading="lazy"><img class="antes" src="img/cocinas_antes_m.webp" alt="Cocina antigua, antes de la reforma" width="800" height="1000" loading="lazy">
+        <span class="ln"></span><span class="kn" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="#141311" d="M9 6 3 12l6 6V6zm6 0v12l6-6-6-6z"/></svg></span><span class="tg a">Antes</span><span class="tg d">Después</span>
+        <label class="sr" for="ad2">Desliza para comparar antes y después de la cocina</label><input id="ad2" type="range" min="0" max="100" value="52"></div></div>
+      <div class="of-t"><h3>Cocinas</h3><p>Muebles, encimera, electricidad, agua y alicatado de la cocina en una sola obra.</p><ul><li>Muebles</li><li>Encimeras</li><li>Instalaciones</li></ul>
+       <div class="caso"><small>Caso</small><q>Cocina cerrada a cocina con península en 9 días.</q></div>
+       <a class="btn ink" data-of="cocina" href="https://wa.me/34663419911" target="_blank" rel="noopener">Pedir presupuesto de cocina</a></div></article>
+     <article class="of" id="alicatados"><div class="of-m"><span class="n">07</span><img src="img/alicatados_m.webp" srcset="img/alicatados_m.webp 800w, img/alicatados.webp 1600w" sizes="(max-width:1000px) 100vw, 38vw" alt="Colocación de azulejos" width="800" height="1000" loading="lazy"></div>
+      <div class="of-t"><h3>Alicatados</h3><p>Suelos y paredes, porcelánico, gran formato y reparaciones de piezas sueltas.</p><ul><li>Suelos</li><li>Paredes</li><li>Gran formato</li></ul>
+       <div class="caso"><small>Caso</small><q>60 m² de porcelánico en un local, a tiempo para abrir.</q></div>
+       <a class="btn ink" data-of="alicatado" href="https://wa.me/34663419911" target="_blank" rel="noopener">Pedir presupuesto de alicatado</a></div></article>
+     <article class="of" id="reformas"><div class="of-m"><span class="n">08</span><img src="img/reformas_m.webp" srcset="img/reformas_m.webp 800w, img/reformas.webp 1600w" sizes="(max-width:1000px) 100vw, 38vw" alt="Piso en reforma" width="800" height="1000" loading="lazy"></div>
+      <div class="of-t"><h3>Reformas integrales</h3><p>Pisos y locales de principio a fin, con una sola persona al mando.</p><ul><li>Pisos</li><li>Locales</li><li>Llave en mano</li></ul>
+       <div class="caso"><small>Caso</small><q>Piso de 75 m² en Sabadell, entregado en 7 semanas.</q></div>
+       <a class="btn ink" data-of="reforma integral" href="https://wa.me/34663419911" target="_blank" rel="noopener">Pedir presupuesto de reforma</a></div></article>
+     <article class="of" id="jardines"><div class="of-m"><span class="n">09</span><img src="img/jardines_m.webp" srcset="img/jardines_m.webp 800w, img/jardines.webp 1600w" sizes="(max-width:1000px) 100vw, 38vw" alt="Terraza con jardín" width="800" height="1000" loading="lazy"></div>
+      <div class="of-t"><h3>Jardines y obras</h3><p>Jardines, terrazas, muros y pequeñas obras.</p><ul><li>Jardines</li><li>Terrazas</li><li>Pequeñas obras</li></ul>
+       <div class="caso"><small>Caso</small><q>Terraza con riego automático y luz exterior.</q></div>
+       <a class="btn ink" data-of="jardín u obra" href="https://wa.me/34663419911" target="_blank" rel="noopener">Pedir presupuesto de jardín u obra</a></div></article>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <section class="sec dark" id="como" aria-labelledby="t-como">
+  <div class="wrap">
+   <div class="intro reveal"><h2 id="t-como">Así trabajamos.</h2><p style="color:#c9c2b6">Sin vueltas: te atendemos, te damos el precio y lo hacemos.</p></div>
+   <ol class="pasos" id="pasos">
+    <li><h3>Nos escribes o llamas</h3><p>A cualquier hora: atendemos 24 h, también festivos.</p></li>
+    <li><h3>Vamos y te damos el precio</h3><p>Miramos el trabajo y te pasamos el presupuesto por escrito antes de empezar.</p></li>
+    <li><h3>Lo hacemos y lo dejamos limpio</h3><p>Un solo equipo para todo: no tienes que llamar a nadie más.</p></li>
+   </ol>
+  </div>
+ </section>
+
+ <section class="sec" id="resenas" aria-labelledby="t-res">
+  <div class="wrap">
+   <div class="intro reveal"><h2 id="t-res">Lo que dicen.</h2><p>Clientes de Badalona, Sabadell y Terrassa.</p></div>
+   <div class="res">
+    <figure class="re reveal"><div class="st" aria-label="5 de 5"></div><blockquote>Vinieron un domingo a las 11 de la noche por un corte de luz. En una hora estaba resuelto.</blockquote><footer>Marta G. · Badalona · electricidad</footer></figure>
+    <figure class="re reveal"><div class="st" aria-label="5 de 5"></div><blockquote>Nos hicieron el baño y la cocina a la vez y no tuvimos que llamar a nadie más.</blockquote><footer>Jordi P. · Sabadell · baño y cocina</footer></figure>
+    <figure class="re reveal"><div class="st" aria-label="5 de 5"></div><blockquote>Presupuesto claro y sin sorpresas al final. Repetiremos con la terraza.</blockquote><footer>Laia R. · Terrassa · reforma</footer></figure>
+   </div>
+  </div>
+ </section>
+
+ <section class="sec" id="quienes" aria-labelledby="t-quien" style="padding-top:0">
+  <div class="wrap quien">
+   <div class="reveal"><p class="eyebrow" style="color:var(--amber2);margin-bottom:14px">Quiénes somos</p><h2 id="t-quien">Somos Haytam y Aron.</h2><p style="margin-top:18px;max-width:46ch;color:var(--ink2);font-size:18px">10 años en el oficio, en toda Cataluña. Un solo equipo para la avería de hoy y la reforma de mañana.</p></div>
+   <div class="duo">
+    <div class="socio reveal"><div class="ini" aria-hidden="true">H</div><h3>Haytam</h3><p>Lleva los trabajos y te atiende por WhatsApp.</p><a href="tel:+34663419911">663 419 911</a></div>
+    <div class="socio reveal"><div class="ini" aria-hidden="true">A</div><h3>Aron</h3><p>En obra, al frente de cada trabajo.</p><a href="tel:+34623184295">623 184 295</a></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="sec form-sec" id="presupuesto" aria-labelledby="t-form">
+  <div class="wrap fgrid">
+   <div class="reveal"><h2 id="t-form">Cuéntanos qué pasa.</h2><p style="margin-top:18px;max-width:40ch;color:var(--ink2);font-size:18px">Toda Cataluña. Urgencias 24 h en el área de Barcelona.</p>
+    <p style="margin-top:22px"><a class="btn amb" href="tel:+34663419911">Urgencia: llamar ahora</a></p></div>
+   <div>
+    <form class="pide" id="pide" novalidate>
+     <div class="dos"><div class="campo"><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" autocomplete="name" required></div>
+      <div class="campo"><label for="f-tel">Teléfono</label><input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" required></div></div>
+     <div class="campo"><label for="f-of">Qué necesitas</label><select id="f-of" name="oficio"><option>Electricidad</option><option>Agua y fontanería</option><option>Gas</option><option>Aire acondicionado</option><option>Baños</option><option>Cocinas</option><option>Alicatados</option><option>Reformas integrales</option><option>Jardines y obras</option></select></div>
+     <fieldset class="campo"><legend>¿Es urgente?</legend><div class="seg">
+      <input type="radio" name="urg" id="u1" value="Sí, ahora"><label for="u1">Sí, ahora</label>
+      <input type="radio" name="urg" id="u2" value="Esta semana" checked><label for="u2">Esta semana</label>
+      <input type="radio" name="urg" id="u3" value="Sin prisa"><label for="u3">Sin prisa</label></div></fieldset>
+     <div class="campo"><label for="f-msg">Cuéntanos un poco</label><textarea id="f-msg" name="msg"></textarea></div>
+     <p class="err" id="f-err" role="alert"></p>
+     <button class="btn ink" type="submit">Enviar</button>
+    </form>
+    <div class="ok" id="f-ok" role="status"><h3 style="font-size:30px">Recibido.</h3><p>Haytam te escribe en unos minutos.</p><a class="btn amb" href="panel.html">Ver cómo le llega a Haytam</a></div>
+   </div>
+  </div>
+ </section>
+</main>
+
+<footer class="pie"><div class="wrap">
+ <div><b>Cobari Solutions</b>Electricidad, agua, gas y reformas en toda Cataluña. Urgencias 24 h.</div>
+ <div><a href="tel:+34663419911">Haytam · 663 419 911</a><a href="tel:+34623184295">Aron · 623 184 295</a><a href="mailto:cobarisolutions@gmail.com">cobarisolutions@gmail.com</a></div>
+ <div><a href="https://instagram.com/cobarisolutions" target="_blank" rel="noopener">Instagram @cobarisolutions</a><a href="panel.html">Panel de trabajos (demo)</a></div>
+</div></footer>
+
+<div class="fija"><a class="btn amb" href="tel:+34663419911">Llamar</a><a class="btn line" style="color:#f4f0e8" data-wa="Hola Cobari, os escribo desde la web." href="https://wa.me/34663419911" target="_blank" rel="noopener">WhatsApp</a></div>
+
+<script>
+(function(){
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var RM=document.documentElement.classList.contains('rm'),WA='34663419911',movil=matchMedia('(max-width: 760px)').matches;
+var wa=function(t){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t)};
+$$('[data-wa]').forEach(function(a){a.href=wa(a.getAttribute('data-wa'))});
+$$('[data-of]').forEach(function(a){a.href=wa('Hola Cobari, os escribo desde la web. Necesito presupuesto de '+a.getAttribute('data-of')+'.')});
+// estrellas
+var est='<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2 3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.3 5.5 22l1.7-7.4-5.7-5 7.5-.7z"/></svg>';
+$$('.st').forEach(function(s){s.innerHTML=est+est+est+est+est});
+// vídeos: se cargan al verse (móvil/escritorio) y se paran fuera
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;
+ if(e.isIntersecting){if(!v.src){v.src=movil?(v.getAttribute('data-src-m')||v.getAttribute('data-src-d')):v.getAttribute('data-src-d')}
+  if(!RM){var p=v.play();if(p&&p.then)p.then(function(){v.classList.add('on')},function(){})}}else if(!v.paused)v.pause()})},{rootMargin:'150px 0px'}):null;
+// la portada carga su vídeo solo en escritorio y después de pintar la página (la primera pantalla va con la foto)
+var hv=$('.hero video');
+$$('video').forEach(function(v){if(v===hv||!io)return;if(movil&&v.closest('.of-m'))return;io.observe(v)});
+if(hv&&!movil&&!RM&&io)addEventListener('load',function(){setTimeout(function(){io.observe(hv)},1200)});
+// aparición
+var ro=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target)}})},{rootMargin:'0px 0px -10% 0px'}):null;
+$$('.reveal,.of').forEach(function(el,i){if(ro&&!RM){el.style.transitionDelay=(el.classList.contains('re')||el.classList.contains('socio'))?(i%3)*120+'ms':'0ms';ro.observe(el)}else el.classList.add('vis')});
+// contadores
+function cuenta(b){var n=+b.getAttribute('data-n'),suf=b.getAttribute('data-suf')||'',t0=null,d=1400;
+ function f(t){if(!t0)t0=t;var k=Math.min(1,(t-t0)/d),v=Math.round(n*(1-Math.pow(1-k,3)));b.textContent=v.toLocaleString('es-ES')+suf;if(k<1)requestAnimationFrame(f)}
+ if(RM)return;b.textContent='0'+suf;requestAnimationFrame(f)}
+var co=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){cuenta(e.target);co.unobserve(e.target)}})},{threshold:.6}):null;
+$$('[data-n]').forEach(function(b){if(co)co.observe(b)});
+// índice de oficios que se ilumina
+var links=$$('#indice a'),secs=links.map(function(a){return $(a.getAttribute('href'))});
+var io2=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var id='#'+e.target.id;
+ links.forEach(function(a){var on=a.getAttribute('href')===id;a.classList.toggle('on',on);if(on&&a.scrollIntoView&&innerWidth<=1000){var ul=a.parentNode.parentNode;ul.scrollTo({left:a.offsetLeft-16,behavior:RM?'auto':'smooth'})}})}})},{rootMargin:'-45% 0px -50% 0px'}):null;
+secs.forEach(function(s){if(s&&io2)io2.observe(s)});
+// antes / después
+$$('[data-ad]').forEach(function(ad){var r=$('input',ad);r.addEventListener('input',function(){ad.style.setProperty('--x',r.value+'%')})});
+// línea de los pasos
+var pasos=$('#pasos');function lp(){var r=pasos.getBoundingClientRect(),k=Math.min(1,Math.max(0,(innerHeight*.85-r.top)/(r.height+innerHeight*.3)));pasos.style.setProperty('--prog',RM?1:k)}
+addEventListener('scroll',lp,{passive:true});lp();
+// formulario → panel de la demo (sin servidor: se guarda en este navegador)
+$('#pide').addEventListener('submit',function(e){e.preventDefault();var f=e.target,n=f.nombre.value.trim(),t=f.tel.value.replace(/\D/g,'');
+ if(n.length<2||t.length<9){$('#f-err').textContent='Pon tu nombre y un teléfono de 9 cifras.';return}
+ $('#f-err').textContent='';var urg=(f.querySelector('input[name=urg]:checked')||{}).value||'Esta semana';
+ var lead={id:Date.now(),nombre:n,tel:t,oficio:f.oficio.value,urgencia:urg,msg:f.msg.value.trim(),fuente:'Formulario de la web',hora:new Date().toISOString(),estado:'nuevo'};
+ try{var l=JSON.parse(localStorage.getItem('cobari_leads')||'[]');l.unshift(lead);localStorage.setItem('cobari_leads',JSON.stringify(l))}catch(x){}
+ f.style.display='none';$('#f-ok').classList.add('show');$('#f-ok').focus&&$('#f-ok').setAttribute('tabindex','-1');$('#f-ok').focus()});
+})();
+</script>
+</body>
+</html>

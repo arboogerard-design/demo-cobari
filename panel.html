@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cobari · Panel de trabajos (demo)</title>
+<meta name="theme-color" content="#141311">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23141311'/%3E%3Cpath d='M18 4 8 18h7l-2 10 11-15h-7z' fill='%23ffb000'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f1eee8;--paper2:#e8e3da;--ink:#141311;--ink2:#2b2925;--stone:#6f695f;--line:rgba(20,19,17,.13);--amber:#ffb000;--amber2:#e09a00;
+ --hd:"Bricolage Grotesque",Georgia,serif;--bd:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overflow-x:clip}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.5 var(--bd);overflow-x:clip}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.demo{background:var(--ink);color:#d9d3c8;font:500 13px/1.3 var(--bd);text-align:center;padding:7px 12px}
+.demo b{color:var(--amber);font-weight:600}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:16px clamp(16px,3vw,32px);border-bottom:1px solid var(--line)}
+header h1{margin:0;font:800 clamp(24px,2.6vw,34px)/1 var(--hd);letter-spacing:-.02em}
+header h1 span{color:var(--stone);font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;border-radius:6px;border:1px solid transparent;font:600 15px/1 var(--bd);text-decoration:none;cursor:pointer}
+.btn.ink{background:var(--ink);color:var(--paper)}
+.btn.amb{background:var(--amber);color:var(--ink)}
+.btn.line{border-color:rgba(20,19,17,.3);background:transparent;color:var(--ink)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+.kpi{background:var(--paper);padding:16px clamp(16px,3vw,32px)}
+.kpi b{display:block;font:800 clamp(26px,3vw,40px)/1 var(--hd);letter-spacing:-.02em}
+.kpi span{font-size:14px;color:var(--stone)}
+.kpi.hot b{color:var(--amber2)}
+@media (max-width:700px){.kpis{grid-template-columns:1fr 1fr}}
+.tabs{display:none;gap:6px;overflow-x:auto;padding:12px 16px;scrollbar-width:none}
+.tabs button{flex:none;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;font:600 14px/1 var(--bd);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;padding:18px clamp(16px,3vw,32px) 40px;align-items:start}
+.col h2{display:flex;justify-content:space-between;align-items:center;margin:0 0 10px;font:600 13px/1 var(--bd);letter-spacing:.12em;text-transform:uppercase;color:var(--stone)}
+.col h2 i{font-style:normal;display:grid;place-items:center;min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:var(--paper2);color:var(--ink);letter-spacing:0}
+.list{display:grid;gap:10px}
+.card{display:block;width:100%;text-align:left;padding:14px;border-radius:10px;background:#fff;border:1px solid var(--line);cursor:pointer;font:inherit;color:inherit;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 24px -14px rgba(20,19,17,.35)}
+.card .t{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.card b{font:600 16px/1.25 var(--bd)}
+.card .of{display:block;margin-top:4px;font-size:14px;color:var(--ink2)}
+.card .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{display:inline-flex;align-items:center;min-height:24px;padding:0 8px;border-radius:999px;background:var(--paper2);font:600 12px/1 var(--bd)}
+.chip.urg{background:var(--amber);color:var(--ink)}
+.chip.web{background:var(--ink);color:var(--paper)}
+.card .eur{font:800 18px/1 var(--hd)}
+.card.nuevo-web{border-color:var(--amber);box-shadow:0 0 0 2px rgba(255,176,0,.35)}
+@media (max-width:1100px){.board{grid-template-columns:1fr}.tabs{display:flex}.col{display:none}.col.ver{display:block}.col h2{display:none}}
+dialog{width:min(100% - 24px,560px);max-height:90svh;border:0;border-radius:14px;padding:0;background:var(--paper);color:var(--ink)}
+dialog::backdrop{background:rgba(18,17,16,.6)}
+.d{padding:22px}
+.d-h{display:flex;justify-content:space-between;gap:12px;align-items:start}
+.d-h h3{margin:0;font:800 30px/1 var(--hd);letter-spacing:-.02em}
+.x{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;font-size:22px;cursor:pointer;flex:none}
+.dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;margin:18px 0;font-size:15px}
+.dl dt{color:var(--stone)}
+.dl dd{margin:0}
+.f{display:grid;gap:12px}
+.f label{display:block;font:600 14px/1 var(--bd);margin-bottom:6px}
+.f select,.f input,.f textarea{width:100%;min-height:46px;padding:10px 12px;border-radius:6px;border:1px solid rgba(20,19,17,.25);background:#fff;font:400 16px var(--bd);color:var(--ink)}
+.f textarea{min-height:80px}
+.acc{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.toast{position:fixed;right:16px;bottom:16px;z-index:70;max-width:min(380px,calc(100vw - 32px));padding:16px 18px;border-radius:12px;background:var(--ink);color:var(--paper);box-shadow:0 20px 50px -20px rgba(0,0,0,.6);transform:translateY(140%);transition:transform .5s var(--ease)}
+.toast.on{transform:none}
+.toast b{display:block;color:var(--amber);font:600 13px/1 var(--bd);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.vacio{padding:14px;border:1px dashed var(--line);border-radius:10px;color:var(--stone);font-size:14px}
+</style>
+</head>
+<body>
+<div class="demo">Panel de demostración · <b>trabajos de ejemplo</b> + los que entres desde el formulario de la web (se guardan solo en este navegador)</div>
+<header><h1>Cobari <span>· trabajos</span></h1><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn line" href="index.html#presupuesto">Probar el formulario</a><button class="btn line" type="button" id="reset">Volver a los ejemplos</button></div></header>
+<section class="kpis" aria-label="Resumen">
+ <div class="kpi"><b id="k-nuevos">0</b><span>nuevos sin contestar</span></div>
+ <div class="kpi hot"><b id="k-urg">0</b><span>urgentes ahora</span></div>
+ <div class="kpi"><b id="k-pres">0 €</b><span>en presupuestos enviados</span></div>
+ <div class="kpi"><b id="k-ok">0 €</b><span>aceptados</span></div>
+</section>
+<nav class="tabs" id="tabs" aria-label="Estados"></nav>
+<main class="board" id="board"></main>
+<dialog id="ficha" aria-labelledby="f-nombre"><div class="d" id="ficha-in"></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)};
+var ESTADOS=[['nuevo','Nuevo'],['contactado','Contactado'],['presupuesto','Presupuesto enviado'],['aceptado','Aceptado'],['hecho','Hecho']];
+var ahora=Date.now(),min=function(m){return new Date(ahora-m*60000).toISOString()};
+// trabajos de EJEMPLO (inventados para la demo; teléfonos tapados)
+var EJEMPLO=[
+ {id:1,nombre:'Marta G.',oficio:'Electricidad',urgencia:'Sí, ahora',zona:'Badalona',msg:'Se ha ido la luz en medio piso y salta el diferencial.',fuente:'WhatsApp',hora:min(12),estado:'nuevo',eur:0},
+ {id:2,nombre:'Restaurante (Sabadell)',oficio:'Aire acondicionado',urgencia:'Esta semana',zona:'Sabadell',msg:'El split de la sala no enfría.',fuente:'Llamada',hora:min(95),estado:'contactado',eur:0},
+ {id:3,nombre:'Jordi P.',oficio:'Baños',urgencia:'Sin prisa',zona:'Sabadell',msg:'Cambiar bañera por plato de ducha.',fuente:'Formulario de la web',hora:min(60*26),estado:'presupuesto',eur:3850},
+ {id:4,nombre:'Comunidad c/ Aragó',oficio:'Agua y fontanería',urgencia:'Sí, ahora',zona:'Barcelona',msg:'Fuga en el patio de luces.',fuente:'Llamada',hora:min(38),estado:'contactado',eur:0},
+ {id:5,nombre:'Laia R.',oficio:'Reformas integrales',urgencia:'Sin prisa',zona:'Terrassa',msg:'Piso de 80 m², reforma completa.',fuente:'Formulario de la web',hora:min(60*50),estado:'aceptado',eur:28400},
+ {id:6,nombre:'Pau S.',oficio:'Cocinas',urgencia:'Esta semana',zona:'Hospitalet',msg:'Cocina nueva con península.',fuente:'WhatsApp',hora:min(60*30),estado:'presupuesto',eur:9200},
+ {id:7,nombre:'Nuria V.',oficio:'Alicatados',urgencia:'Esta semana',zona:'Mataró',msg:'Suelo del local, unos 60 m².',fuente:'Instagram',hora:min(60*72),estado:'hecho',eur:4100},
+ {id:8,nombre:'Toni M.',oficio:'Jardines y obras',urgencia:'Sin prisa',zona:'Sant Cugat',msg:'Riego automático y luz en la terraza.',fuente:'Formulario de la web',hora:min(60*8),estado:'nuevo',eur:0}
+];
+function lee(k,d){try{return JSON.parse(localStorage.getItem(k)||'null')||d}catch(e){return d}}
+function guarda(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function web(){return lee('cobari_leads',[]).map(function(l){l.web=true;l.zona=l.zona||'zona por confirmar';l.eur=l.eur||0;return l})}
+function todos(){var cambios=lee('cobari_cambios',{});return web().concat(EJEMPLO).map(function(l){var c=cambios[l.id];return c?Object.assign({},l,c):l})}
+function hace(iso){var m=Math.max(0,Math.round((Date.now()-new Date(iso))/60000));return m<60?'hace '+m+' min':m<1440?'hace '+Math.round(m/60)+' h':'hace '+Math.round(m/1440)+' d'}
+function eur(n){return (n||0).toLocaleString('es-ES')+' €'}
+function tel(l){return l.web?l.tel:'6•• ••• •'+String(10+l.id*7).slice(-2)}
+var ver='nuevo';
+function pinta(){
+ var L=todos(),b=$('#board');b.innerHTML='';
+ $('#k-nuevos').textContent=L.filter(function(l){return l.estado==='nuevo'}).length;
+ $('#k-urg').textContent=L.filter(function(l){return l.urgencia==='Sí, ahora'&&l.estado!=='hecho'&&l.estado!=='aceptado'}).length;
+ $('#k-pres').textContent=eur(L.filter(function(l){return l.estado==='presupuesto'}).reduce(function(s,l){return s+(+l.eur||0)},0));
+ $('#k-ok').textContent=eur(L.filter(function(l){return l.estado==='aceptado'||l.estado==='hecho'}).reduce(function(s,l){return s+(+l.eur||0)},0));
+ var tabs=$('#tabs');tabs.innerHTML='';
+ ESTADOS.forEach(function(e){var n=L.filter(function(l){return l.estado===e[0]}).length;
+  var t=document.createElement('button');t.type='button';t.textContent=e[1]+' · '+n;t.setAttribute('aria-pressed',String(ver===e[0]));t.onclick=function(){ver=e[0];pinta()};tabs.appendChild(t);
+  var c=document.createElement('section');c.className='col'+(ver===e[0]?' ver':'');c.setAttribute('aria-label',e[1]);
+  c.innerHTML='<h2>'+e[1]+'<i>'+n+'</i></h2>';var li=document.createElement('div');li.className='list';
+  var del=L.filter(function(l){return l.estado===e[0]}).sort(function(a,b){return (b.urgencia==='Sí, ahora')-(a.urgencia==='Sí, ahora')||new Date(b.hora)-new Date(a.hora)});
+  if(!del.length)li.innerHTML='<p class="vacio">Nada por aquí.</p>';
+  del.forEach(function(l){var k=document.createElement('button');k.type='button';k.className='card'+(l.web&&l.estado==='nuevo'?' nuevo-web':'');
+   k.innerHTML='<span class="t"><b></b><span class="eur"></span></span><span class="of"></span><span class="meta"></span>';
+   k.querySelector('b').textContent=l.nombre;k.querySelector('.eur').textContent=l.eur?eur(l.eur):'';k.querySelector('.of').textContent=l.oficio+' · '+l.zona;
+   var m=k.querySelector('.meta');if(l.urgencia==='Sí, ahora')m.insertAdjacentHTML('beforeend','<span class="chip urg">Urgente</span>');
+   m.insertAdjacentHTML('beforeend','<span class="chip'+(l.web?' web':'')+'"></span><span class="chip"></span>');var cs=m.querySelectorAll('.chip');cs[cs.length-2].textContent=l.web?'Desde la web':l.fuente;cs[cs.length-1].textContent=hace(l.hora);
+   k.onclick=function(){abre(l.id)};li.appendChild(k)});
+  c.appendChild(li);b.appendChild(c)});
+}
+function abre(id){var l=todos().filter(function(x){return x.id===id})[0];if(!l)return;var d=$('#ficha-in');
+ d.innerHTML='<div class="d-h"><h3 id="f-nombre"></h3><button class="x" type="button" aria-label="Cerrar">×</button></div>'+
+  '<dl class="dl"><dt>Oficio</dt><dd data-k="oficio"></dd><dt>Urgencia</dt><dd data-k="urgencia"></dd><dt>Zona</dt><dd data-k="zona"></dd><dt>Teléfono</dt><dd data-k="tel"></dd><dt>Entró</dt><dd data-k="fuente"></dd><dt>Mensaje</dt><dd data-k="msg"></dd></dl>'+
+  '<div class="f"><div><label for="f-est">Estado</label><select id="f-est"></select></div><div><label for="f-eur">Presupuesto (€)</label><input id="f-eur" type="number" min="0" step="10" inputmode="numeric"></div><div><label for="f-nota">Nota</label><textarea id="f-nota"></textarea></div></div>'+
+  '<div class="acc"><button class="btn ink" type="button" id="f-ok">Guardar</button><a class="btn amb" id="f-wa" target="_blank" rel="noopener">Escribir por WhatsApp</a><a class="btn line" id="f-call">Llamar</a></div>';
+ d.querySelector('#f-nombre').textContent=l.nombre;
+ ['oficio','urgencia','zona','msg'].forEach(function(k){d.querySelector('[data-k='+k+']').textContent=l[k]||'—'});
+ d.querySelector('[data-k=tel]').textContent=tel(l)+(l.web?'':' (ejemplo)');d.querySelector('[data-k=fuente]').textContent=(l.web?'Formulario de la web':l.fuente)+' · '+hace(l.hora);
+ var s=d.querySelector('#f-est');ESTADOS.forEach(function(e){var o=document.createElement('option');o.value=e[0];o.textContent=e[1];if(e[0]===l.estado)o.selected=true;s.appendChild(o)});
+ d.querySelector('#f-eur').value=l.eur||'';d.querySelector('#f-nota').value=l.nota||'';
+ var wa=d.querySelector('#f-wa'),cl=d.querySelector('#f-call');
+ if(l.web){wa.href='https://wa.me/34'+String(l.tel).slice(-9)+'?text='+encodeURIComponent('Hola '+l.nombre+', soy Haytam de Cobari. He visto tu mensaje sobre '+l.oficio.toLowerCase()+'. ¿Cuándo te va bien que pasemos?');cl.href='tel:+34'+String(l.tel).slice(-9)}
+ else{wa.removeAttribute('href');wa.setAttribute('aria-disabled','true');wa.style.opacity=.45;wa.textContent='WhatsApp (ejemplo)';cl.removeAttribute('href');cl.style.opacity=.45}
+ d.querySelector('.x').onclick=function(){$('#ficha').close()};
+ d.querySelector('#f-ok').onclick=function(){var c=lee('cobari_cambios',{});c[id]={estado:s.value,eur:+d.querySelector('#f-eur').value||0,nota:d.querySelector('#f-nota').value};guarda('cobari_cambios',c);$('#ficha').close();ver=s.value;pinta()};
+ $('#ficha').showModal()}
+$('#ficha').addEventListener('click',function(e){if(e.target===$('#ficha'))$('#ficha').close()});
+$('#reset').onclick=function(){guarda('cobari_cambios',{});pinta()};
+// aviso de trabajo nuevo desde la web
+function avisa(){var vistos=lee('cobari_vistos',[]),nuevos=web().filter(function(l){return vistos.indexOf(l.id)<0});
+ if(!nuevos.length)return;var l=nuevos[0],t=$('#toast');t.innerHTML='<b>Nuevo trabajo desde la web</b><span></span>';
+ t.querySelector('span').textContent=l.nombre+' · '+l.oficio+(l.urgencia==='Sí, ahora'?' · URGENTE':'');t.classList.add('on');
+ guarda('cobari_vistos',vistos.concat(nuevos.map(function(x){return x.id})));setTimeout(function(){t.classList.remove('on')},6000)}
+addEventListener('storage',function(e){if(e.key==='cobari_leads'){pinta();avisa()}});
+pinta();setTimeout(avisa,500);
+})();
+</script>
+</body>
+</html>
